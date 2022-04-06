@@ -28,9 +28,4 @@ public class CarController {
         model.addAttribute("list", returnedCarList);
         return "cars";
     }
-
-//    @GetMapping("/cars")
-//    public String getCars() {
-//        return "cars";
-//    }
 }

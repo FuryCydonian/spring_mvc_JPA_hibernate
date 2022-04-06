@@ -1,19 +1,14 @@
 package mvc_hibernate_crud.dao;
 
 import mvc_hibernate_crud.model.User;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.*;
 import java.util.List;
 
-@Service
+@Repository
 public class UserDaoImpl implements UserDao {
-
-//    @Autowired
-//    private EntityManagerFactory entityManagerFactory;
 
     @PersistenceContext
     EntityManager entityManager;
@@ -30,7 +25,7 @@ public class UserDaoImpl implements UserDao {
     @Override
     @Transactional
     public void addUser(User user) {
-
+        entityManager.persist(user);
     }
 
     @Override
