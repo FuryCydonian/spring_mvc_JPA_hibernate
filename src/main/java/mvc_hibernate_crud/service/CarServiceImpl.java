@@ -1,7 +1,6 @@
-package web.service;
+package mvc_hibernate_crud.service;
 
-import org.springframework.stereotype.Service;
-import web.model.Car;
+import mvc_hibernate_crud.model.Car;
 
 import java.util.List;
 

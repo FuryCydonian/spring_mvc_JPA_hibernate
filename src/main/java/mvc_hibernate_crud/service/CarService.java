@@ -1,6 +1,6 @@
-package web.service;
+package mvc_hibernate_crud.service;
 
-import web.model.Car;
+import mvc_hibernate_crud.model.Car;
 
 import java.util.List;
 

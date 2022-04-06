@@ -1,4 +1,4 @@
-package web.model;
+package mvc_hibernate_crud.model;
 
 public class Car {
     private String brand;
