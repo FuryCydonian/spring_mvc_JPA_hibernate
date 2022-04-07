@@ -1,7 +1,6 @@
 package mvc_hibernate_crud.service;
 
 import mvc_hibernate_crud.dao.UserDao;
-import mvc_hibernate_crud.dao.UserDaoImpl;
 import mvc_hibernate_crud.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,11 +16,16 @@ public class UserServiceImpl implements UserService {
 
     @Transactional
     @Override
+    public void createTable() {
+        userDao.createTable();
+    }
+
+    @Transactional
+    @Override
     public List<User> getAllUsers() {
         return userDao.getAllUsers();
     }
 
-    // TODO realize methods
     @Override
     @Transactional
     public void addUser(User user) {
@@ -39,6 +43,4 @@ public class UserServiceImpl implements UserService {
     public void removeUser(long id) {
         userDao.removeUser(id);
     }
-
-
 }

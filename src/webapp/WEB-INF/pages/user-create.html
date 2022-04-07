@@ -7,28 +7,26 @@
     <title>Create User</title>
 </head>
 <body>
-<div class="container">
-    <form th:method="POST" th:action="@{/user-create}" th:object="${user}">
-        <div class="mb-3">
-            <label for="firstName">First Name</label>
-            <input class="form-control" type="text" th:field="*{firstName}" id="firstName"
-                   placeholder="Enter First Name">
-        </div>
+    <div class="container">
+        <form th:method="POST" th:action="@{/user-create}" th:object="${user}">
+            <div class="mb-3">
+                <label for="firstName">First Name</label>
+                <input class="form-control" type="text" th:field="*{firstName}" id="firstName"
+                       placeholder="Enter First Name">
+            </div>
 
-        <div class="mb-3">
-            <label for="lastName">Last Name</label>
-            <input class="form-control" type="text" th:field="*{lastName}" id="lastName" placeholder="Enter Last Name">
-        </div>
+            <div class="mb-3">
+                <label for="lastName">Last Name</label>
+                <input class="form-control" type="text" th:field="*{lastName}" id="lastName" placeholder="Enter Last Name">
+            </div>
 
-        <div class="mb-3">
-            <label for="email">Email</label>
-            <input class="form-control" type="text" th:field="*{email}" id="email" placeholder="Enter Email">
-        </div>
+            <div class="mb-3">
+                <label for="email">Email</label>
+                <input class="form-control" type="text" th:field="*{email}" id="email" placeholder="Enter Email">
+            </div>
 
-        <button class="btn btn-primary btn-lg" type="submit">Create User</button>
-
-    </form>
-</div>
-
+            <button class="btn btn-primary btn-lg" type="submit">Create User</button>
+        </form>
+    </div>
 </body>
 </html>

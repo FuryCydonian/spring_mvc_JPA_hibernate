@@ -13,14 +13,24 @@ public class UserDaoImpl implements UserDao {
     @PersistenceContext
     EntityManager entityManager;
 
+    public void createTable() {
+        entityManager.createNativeQuery("create table IF NOT EXISTS spring_hiber.users\n" +
+                "(\n" +
+                "    id        bigint auto_increment,\n" +
+                "    name      varchar(50) null,\n" +
+                "    last_name varchar(50) null,\n" +
+                "    email     varchar(50) null,\n" +
+                "    constraint table_name_pk\n" +
+                "        primary key (id)\n" +
+                ");");
+    }
+
     @Override
     public List<User> getAllUsers() {
-//        TypedQuery<User> query = entityManagerFactory.createEntityManager().createQuery("from User", User.class);
         TypedQuery<User> query = entityManager.createQuery("select u from User u", User.class);
         return query.getResultList();
     }
 
-    // TODO realize methods
     @Override
     public void addUser(User user) {
         entityManager.persist(user);

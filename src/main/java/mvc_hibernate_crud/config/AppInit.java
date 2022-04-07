@@ -47,17 +47,11 @@ public class AppInit extends AbstractAnnotationConfigDispatcherServletInitialize
     public void onStartup(ServletContext servletContext) throws ServletException {
         super.onStartup(servletContext);
         registerHiddenFieldFilter(servletContext);
-
         registerServletFilter(servletContext, Objects.requireNonNull(getServletFilters())[0]);
-//        FilterRegistration.Dynamic encodingFilter = aContext.addFilter("encodingFilter", new CharacterEncodingFilter());
-//        encodingFilter.setInitParameter("encoding", "UTF-8");
-//        encodingFilter.setInitParameter("forceEncoding", "true");
-//        encodingFilter.addMappingForUrlPatterns(null, true, "/*");
     }
 
     private void registerHiddenFieldFilter(ServletContext servletContext) {
         servletContext.addFilter("hiddenHttpMethodFilter",
                 new HiddenHttpMethodFilter()).addMappingForUrlPatterns(null, true, "/*");
     }
-
 }

@@ -38,7 +38,6 @@ public class HibernateConfig {
         LocalContainerEntityManagerFactoryBean lcemfb = new LocalContainerEntityManagerFactoryBean();
         lcemfb.setJpaVendorAdapter(getJpaVendorAdapter());
         lcemfb.setDataSource(dataSource());
-//        lcemfb.setPersistenceUnitName("myJpaPersistenceUnit");
         lcemfb.setPackagesToScan("mvc_hibernate_crud.model");
         lcemfb.setJpaProperties(hibernateProperties());
         return lcemfb;

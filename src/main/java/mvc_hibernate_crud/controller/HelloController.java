@@ -10,14 +10,13 @@ import java.util.List;
 @Controller
 public class HelloController {
 
-	@GetMapping(value = "/")
-	public String printWelcome(ModelMap model) {
-		List<String> messages = new ArrayList<>();
-		messages.add("Hello!");
-		messages.add("I'm Spring MVC-JPA application");
-		messages.add("5.3.18 version by apr'22 ");
-		model.addAttribute("messages", messages);
-		return "index";
-	}
-
+    @GetMapping(value = "/")
+    public String printWelcome(ModelMap model) {
+        List<String> messages = new ArrayList<>();
+        messages.add("Hello!");
+        messages.add("I'm Spring MVC-JPA application");
+        messages.add("5.3.18 version by apr'22 ");
+        model.addAttribute("messages", messages);
+        return "index";
+    }
 }
