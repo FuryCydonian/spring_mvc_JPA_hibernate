@@ -40,6 +40,7 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public void removeUser(long id) {
-//        entityManager.
+        User user = readUser(id);
+        entityManager.remove(user);
     }
 }
